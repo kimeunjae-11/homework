@@ -1,1 +1,35 @@
-/* 여기에 스타일을 구현해 주세요 */
+.Avatars {
+  list-style: none;
+}
+
+.Avatars img {
+  margin: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.Avatars li {
+  float: left;
+  width: 25%;
+  position: relative;
+}
+
+.Avatars li::after {
+  content: '';
+  position: absolute;
+  right: 100px;
+  bottom: 25px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: block;
+  background: #dbdbdb;
+}
+
+.Avatars li:nth-child(2)::after,
+.Avatars li:nth-child(4)::after,
+.Avatars li:nth-child(5)::after,
+.Avatars li:nth-child(6)::after {
+  background-color: #4cfe88;
+}
