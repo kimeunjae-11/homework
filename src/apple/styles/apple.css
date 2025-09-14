@@ -1,3 +1,421 @@
-@import "./card-component.css";
+@import './card-component.css';
+:root {
+  /* Color */
+  --white: #f5f5f7;
+  --black: #1d1d1f;
+  --red: #d11719;
+  --gray: #86868b;
+  --blue-100: #2997ff;
+  --blue-200: #0077ed;
+  --blue-300: #0071e3;
+  --blue-400: #006edb;
+
+  /* Box Size */
+  /* 500px의 크기가 부족할 경우 임의대로 수정 가능 */
+  --size: 31.25rem; /* 500px - 카드 높이 고정 값 */
+
+  /* Text Size */
+  --xx-small-text: 0.75rem; /* 12px - Small Screen 버튼(링크) 글자 크기 */
+  --x-small-text: 0.875rem; /* 14px - Large Screen 버튼(링크) 글자 크기 */
+  --small-text: 1.0625rem; /* 17px - 출시일 추후 공개 글자 크기 (공통) */
+  --base-text: 1.1875rem; /* 19px - Small Screen 부제목 글자 크기 */
+  --medium-text: 1.3125rem; /* 21px - Large Screen 부제목 글자 크기 */
+  --large-text: 2rem; /* 32px - Small Screen 제목 글자 크기 */
+  --extra-large-text: 2.5rem; /* 40px - Large Screen 제목 글자 크기 */
+
+  /* Spacing */
+  --x-small-spacing: 0.5rem; /* 8px - 버튼(링크) 상,하단 안쪽 여백, 부제목 하단 여백 */
+  --small-spacing: 0.75rem; /* 12px - 카드 제목, 부제목, 버튼(링크)간 여백(gap), 버튼(링크) 좌,우 안쪽 여백 */
+  --base-spacing: 1rem; /* 16px - 2개의 버튼(링크) 사이 여백 (공통) */
+  --large-spacing: 2.5rem; /* 40px - Small Screen 상단 여백 */
+  --extra-large-spacing: 3.75rem; /* 60px - Large Screen 상단 여백 */
+
+  --line-normal: 1.5; /* 부제목 줄간격 */
+}
 
 /* 카드 레이아웃 */
+body {
+  margin: 0;
+}
+
+.ipad {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/ipad_pro.jpeg') no-repeat center/cover;
+  color: var(--white);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .sub {
+    font-size: var(--small-text);
+    margin-bottom: 2rem;
+    color: var(--gray);
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--blue-100);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--blue-200);
+    border: solid 1px var(--blue-200);
+  }
+}
+
+.ipad-air {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/ipad_air.jpeg') no-repeat center/cover;
+  color: var(--black);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .sub {
+    font-size: var(--small-text);
+    margin-bottom: 2rem;
+    color: var(--gray);
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--black);
+    border: solid 1px var(--black);
+  }
+}
+
+.iphone-15-pro {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/iphone15_pro.jpeg') no-repeat center/cover;
+  color: var(--white);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--blue-100);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--blue-200);
+    border: solid 1px var(--blue-200);
+  }
+}
+
+.iphone-15 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/iphone15.jpeg') no-repeat center/cover;
+  color: var(--black);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--black);
+    border: solid 1px var(--black);
+  }
+}
+
+.watch {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/apple_watch.jpeg') no-repeat center/cover;
+  color: var(--white);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--blue-100);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--blue-200);
+    border: solid 1px var(--blue-200);
+  }
+}
+
+.macbook-air {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/macbook_air.jpeg') no-repeat center/cover;
+  color: var(--black);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--black);
+    border: solid 1px var(--black);
+  }
+}
+
+.airpods-pro {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/src/apple/products/airpods_pro.jpeg') no-repeat center/cover;
+  color: var(--white);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--extra-large-spacing);
+
+  .title {
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+    margin-bottom: var(--large-spacing);
+  }
+
+  .text {
+    font-size: var(--large-text);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tbutton {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tbutton button {
+    padding: var(--small-spacing) var(--x-small-spacing);
+    font-size: var(--x-small-textsmall-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .tbutton .plus {
+    background-color: var(--blue-100);
+    color: var(--white);
+  }
+
+  .tbutton .view {
+    background-color: transparent;
+    color: var(--blue-200);
+    border: solid 1px var(--blue-200);
+  }
+}
+
+.apple {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
